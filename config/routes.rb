@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post   'login' , to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
-  resources :users
   resources :microposts
   resources :sessions, only: [:new, :create, :destroy,:edit,:update]
   resources :relationships, only: [:create, :destroy]
@@ -64,4 +63,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
 end

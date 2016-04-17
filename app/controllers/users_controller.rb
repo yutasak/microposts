@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:index, :edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
+  
   def show # 追加
    @user = User.find(params[:id])
    @microposts = @user.microposts.order(created_at: :desc)
@@ -30,6 +33,22 @@ def update
       render 'edit'
     end
 end
+
+def following
+    @title = "Following"
+    @users = @user.followed_users.paginate(page: params[:page])
+    render :show_follow
+end
+
+  def followers
+    @title = "Followers"
+    @users = @user.followers.paginate(page: params[:page])
+    render :show_follow
+  end
+  def index
+    @users = User.all
+  end
+
 
 
   private
