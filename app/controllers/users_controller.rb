@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   
   def new
      @user = User.new
-     @user_profile = @user.user_profiles.new
   end
   
   def create
