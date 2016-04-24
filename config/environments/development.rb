@@ -1,5 +1,4 @@
 Rails.application.configure do
-config.web_console.whitelisted_ips = '124.34.208.85'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -39,6 +38,4 @@ config.web_console.whitelisted_ips = '124.34.208.85'
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  
-  
 end

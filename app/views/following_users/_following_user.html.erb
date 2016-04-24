@@ -1,0 +1,19 @@
+<li id="followings-
+<%= following_user.id %>
+">
+  <%= link_to gravatar_for(following_user, size: 50), user_path(following_user.id) %>
+
+  <span class="user">
+  <%= link_to following_user.name, user_path(following_user.id) %>
+  </span>
+  
+  <span class="micropost_count">
+  <%= pluralize(following_user.microposts.count, "micropost") %>
+  </span>
+  
+  <span class="counter">
+  <%= pluralize(following_user.following_users.count, "following") %>
+  <%= pluralize(following_user.follower_users.count, "follower") %>
+  </span>
+  
+</li>

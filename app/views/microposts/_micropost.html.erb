@@ -14,8 +14,8 @@
     Posted 
 <%= time_ago_in_words(micropost.created_at) %>
  ago.
-    
-<% if current_user == micropost.user %>
+ 
+ <% if current_user == micropost.user %>
 
       
 <%= link_to "delete", micropost, method: :delete,
@@ -23,6 +23,6 @@
 
     
 <% end %>
-
+ 
   </span>
 </li>
